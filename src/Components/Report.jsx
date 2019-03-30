@@ -7,7 +7,7 @@ import Deal from './Deal'
 class Report extends Component {
     render() {
         return (
-            <div className="report-container">
+            <div className="report">
                 <Profit />
                 <Chartdata />
                 <Deal />

@@ -15,7 +15,7 @@ const options = {
 class Chartdata extends Component {
     render() {
         return (
-            <div>
+            <div className='chart'>
                 <HighchartsReact
                     highcharts={Highcharts}
                     options={options}

@@ -1,6 +1,7 @@
 body {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
@@ -12,6 +13,48 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
-.deal {
+.calendar {
+  
+  padding: 50px;
+
+}
+.profit {
   display: inline-block;
+   text-align: center;
+   border: 1px solid  #eee;
+   box-shadow: 0 2px 2px #ccc;
+   width: 330px;  
+   padding:10px;
+   margin:15px;
+   text-transform: uppercase;
+}
+.deal {
+  padding: 25px;
+  
+}
+.chart {
+
+  border-top: groove;
+  border-bottom: groove;
+
+}
+.container {
+  border-style: groove;
+  margin-top: 50px;
+}
+.report {
+  border-left: groove;
+  padding: 0;
+  max-width: 100%;
+}
+.buy,
+.sell{
+   display: inline-block;
+   text-align: center;
+   border: 1px solid  #eee;
+   box-shadow: 0 2px 2px #ccc;
+   width: 120px;  
+   padding:10px;
+   margin:15px;
+   text-transform: uppercase;
 }

@@ -12,8 +12,8 @@ const localizer = BigCalendar.momentLocalizer(moment)
 class Calendar extends Component {
   render() {
     return (
-      <div className="App">
-         <div style={{ height: 700 }}>
+      <div className="calendar">
+         <div style={{ height: 550 }}>
             <BigCalendar
               events={events}
               localizer={localizer}

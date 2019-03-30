@@ -4,10 +4,14 @@ class Deal extends Component {
     render() {
         return (
             <div className='deal'>
-               <h4><u>Buy Date</u></h4>
-               <span>13th April</span>
-               <h4><u>Sell Date</u></h4>
-               <span>17th April</span>
+                <div className="buy">
+                <h4><u>13th April</u></h4>
+                <h5>Buy Date</h5>
+                </div>
+               <div className='sell'>
+                <h4><u>17th April</u></h4>
+                <h5>Sell Date</h5>
+                </div>
             </div>
         );
     }
