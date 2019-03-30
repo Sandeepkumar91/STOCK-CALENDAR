@@ -33,7 +33,7 @@ code {
   
 }
 .chart {
-
+  
   border-top: groove;
   border-bottom: groove;
 
@@ -46,6 +46,7 @@ code {
   border-left: groove;
   padding: 0;
   max-width: 100%;
+  outline: none;
 }
 .buy,
 .sell{
