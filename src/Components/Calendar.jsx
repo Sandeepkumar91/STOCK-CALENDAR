@@ -17,7 +17,7 @@ class Calendar extends Component {
             <BigCalendar
               events={events}
               localizer={localizer}
-              date={new Date(2015, 4, 0)}
+              dates={new Date(2019, 2 ,1)}
             />
           </div>
       </div>
