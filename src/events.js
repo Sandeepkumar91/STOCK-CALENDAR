@@ -4,7 +4,6 @@ export default [
   {
     id: 0,
     title: 'Rs 550',
-    allDay: true,
     start: new Date(2019, 2, 1),
     end: new Date(2019, 2, 1),
   },
@@ -14,7 +13,6 @@ export default [
     start: new Date(2019, 2, 2),
     end: new Date(2019, 2, 2),
   },
-
   {
     id: 2,
     title: 'Rs 545',
@@ -24,7 +22,7 @@ export default [
 
   {
     id: 3,
-    title: 'ADD STOCK',
+    title: '550',
     start: new Date(2019, 2, 4),
     end: new Date(2019, 2, 4),
   },
