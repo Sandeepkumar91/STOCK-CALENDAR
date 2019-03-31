@@ -8,19 +8,28 @@ var dateFormat = require('dateformat');
 
 class Chartdata extends Component {
     render() {
+      debugger
        console.log(this.props);
 
 
     let stockdata = this.props.stockData
     var options = {}
-    debugger
+    
       if (stockdata != null) {
-        let dates = stockdata.map((currElement) => {
-            let date = Date.parse(currElement.date, "YYYY-MM-DD")
-            let dateStr = dateFormat(date, "mmm dd");
+        let stockApiWIthDateClass = stockdata.map((currElement) => {
+            let parsedDate = Date.parse(currElement.date, "YYYY-MM-DD")
+            return {date: parsedDate, stock_price: currElement.stock_price}
+        })
+
+        let sortedStockData = stockApiWIthDateClass.sort((a, b) => {
+           return a.date - b.date
+        })
+
+        let dates = sortedStockData.map((currElement) => {
+            let dateStr = dateFormat(currElement.date, "mmm dd");
             return dateStr
         })
-        let prices = stockdata.map((currElement) => {
+        let prices = sortedStockData.map((currElement) => {
             return currElement.stock_price
         })
 
@@ -65,6 +74,7 @@ const mapStateToProps = (state) => {
         
         return {
           stockData: state.data.stockApiResponse,
+          eventAddedCount: state.data.stockApiResponseChangeCount
         }
     } 
 

@@ -7,18 +7,18 @@ import { getStockPrice } from '../Actions/Actions';
 class Dashboard extends Component {
 
     componentDidMount() {
-        debugger
+        
         console.log(this.props);
         this.props.getstockPriceResponse();
     }
-  
+
     render() {
         console.log(this.props)
         return (
              <div className="container">
                 <div className="row">
                     <div className="col-md-8">
-                        <Calendar />
+                        <Calendar callBack = {this.renderComponent}/>
                     </div>
                     <div className="col-md-4">
                         <Report />

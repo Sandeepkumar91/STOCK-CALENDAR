@@ -4,6 +4,7 @@ import moment from 'moment';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
 import dates from '../dates.js';
 import { connect } from 'react-redux';
+import {addNewObject, addedOrRemovedEvent} from '../Actions/Actions'
 
 var dateFormat = require('dateformat');
 
@@ -17,18 +18,20 @@ class Calendar extends Component {
     const title = window.prompt('Add Stock Price')
     var newStock = {
         date: dateFormat(start, "yyyy-mm-dd"),
-        stock_price: title
+        stock_price: Number(title)
     }
+    this.props.addNewObject(newStock);
+    this.props.eventAddedOrModified();
   }
 
   render() {
-
+    debugger
     var events = []
 
     const { stockList } = this.props;
+
     if (stockList != null) {
-       debugger
-        var events = stockList.map((currElement, index) => {
+         events = stockList.map((currElement, index) => {
             let eventObj = Object()
             eventObj.id = index
             eventObj.title = "Rs. " + currElement['stock_price']
@@ -38,9 +41,6 @@ class Calendar extends Component {
             return eventObj
         });
     }
-    
-
-    debugger
 
     return (
       <div className="calendar">
@@ -49,7 +49,7 @@ class Calendar extends Component {
               selectable
               events={events}
               localizer={localizer}
-              dates={new Date(2019, 2 ,1)}
+              defaultDate={new Date(2019, 3, 0)}
               onSelectSlot={this.handleSelect}
             />
           </div>
@@ -61,7 +61,19 @@ class Calendar extends Component {
         
         return {
           stockList: state.data.stockApiResponse,
+          eventAddedCount: state.data.stockApiResponseChangeCount
         }
-    }
+  }
+  
+  const mapDispatchToProps = (dispatch) => {
+        return {
+          addNewObject: (newStock) => {
+              dispatch(addNewObject(newStock))
+          },
+          eventAddedOrModified: () => {
+              dispatch(addedOrRemovedEvent())
+          }
+        }
+  }
 
-export default connect(mapStateToProps , null)(Calendar);
+export default connect(mapStateToProps , mapDispatchToProps)(Calendar);

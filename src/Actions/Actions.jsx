@@ -11,14 +11,25 @@ export const getStockPrice = () => {
 
         axios.get(url, config)
                 .then(response => {
-                    debugger
+                
                     dispatch({
                         type: "STOCKPRICE_RESPONSE",
                         response: response.data
                     })
                 }).catch((error) => {
-                      debugger 
-                }
-            );
-        }
-    }    
+                      
+            }
+        );
+    }
+} 
+export const addNewObject = (newStock) => {
+    return {
+        type: 'ADD_NEW_OBJECT',
+        newStock: newStock
+    }
+} 
+export const addedOrRemovedEvent = () => {
+    return {
+        type: 'EVENT_ADDED_OR_REMOVED',
+    }
+}   
