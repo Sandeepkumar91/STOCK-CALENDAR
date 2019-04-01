@@ -15,7 +15,7 @@ const DataReducer = (state = initState , action) => {
                 })
             }
         case "ADD_NEW_OBJECT":
-        debugger
+        
             var newArray = state.stockApiResponse
             var obj = action.newStock
             newArray.push(obj)

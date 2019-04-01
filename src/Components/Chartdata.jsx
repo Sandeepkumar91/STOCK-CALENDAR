@@ -8,10 +8,7 @@ var dateFormat = require('dateformat');
 
 class Chartdata extends Component {
     render() {
-      debugger
-       console.log(this.props);
-
-
+      
     let stockdata = this.props.stockData
     var options = {}
     

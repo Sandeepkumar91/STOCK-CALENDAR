@@ -25,7 +25,7 @@ class Calendar extends Component {
   }
 
   render() {
-    debugger
+    
     var events = []
 
     const { stockList } = this.props;

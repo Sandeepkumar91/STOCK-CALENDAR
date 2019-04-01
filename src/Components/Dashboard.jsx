@@ -7,13 +7,10 @@ import { getStockPrice } from '../Actions/Actions';
 class Dashboard extends Component {
 
     componentDidMount() {
-        
-        console.log(this.props);
         this.props.getstockPriceResponse();
     }
 
     render() {
-        console.log(this.props)
         return (
              <div className="container">
                 <div className="row">
